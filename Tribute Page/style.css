@@ -11,6 +11,8 @@
 .page1 {
     background-color: #BA3846;
     height: 120vh;
+    max-width: 100vw;
+    overflow: hidden;
     
 }
 .line{
@@ -58,20 +60,20 @@ button {
     border: none;
     border-radius: 12.34px;
 }
-
-
-.hero {
+.hero{
     
-    display: flex;
-    flex-direction: row;
+    padding: 0 40px;
+
+    
 }
+
 .hero-content {
     position: absolute;
     display: flex;
     flex-direction: column;
+    justify-self: flex-start;
     margin-top: 100px;
-    margin-left: 70px;
-    max-width: 60vw;
+    padding: 0 40px;
     gap: 10px;
     z-index: 0;
 }
@@ -80,8 +82,8 @@ button {
     width: 700px;
     height: 795px;
     justify-self:end;
-    position: relative;
-    margin-left: 700px;
+    position:relative;
+    margin-left: 650px;
     z-index: 1;
 
 }
@@ -232,3 +234,4 @@ button {
     font-family: "Bangers", system-ui;
     font-size: 220.74px;
 }
+
