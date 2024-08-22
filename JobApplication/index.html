@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Job Application (Web)</h1>
+        <div class="questions">
+            <div class="Fname que">
+                <label for="Fname">First Name</label>
+                <input type="text" placeholder="Enter First Name...." id="Fname">
+            </div>
+            <div class="Lname que">
+                <label for="Lname">Last Name</label>
+                <input type="text" placeholder="Enter Last Name...." id="Lname">
+            </div>
+            <div class="email que">
+                <label for="email">Email</label>
+                <input type="email" placeholder="Enter Email...." id="email">
+            </div>
+            <div class="jobRole que">
+                <label for="Job Role">Job Role</label>
+                <select name="Job Role" id="jobRole">
+                    <option value="" disabled selected>Select Job Role </option>
+                    <option value="Web Developer">Web Developer</option>
+                    <option value="Sr.Engineer">Sr. Engineer</option>
+                    <option value="Java Developer">Java Developer</option>
+                </select>
+            </div>
+            <div class="address que">
+                <label for="address">Enter Address</label>
+                <textarea name="address" id="address" rows="2" cols="70" placeholder="Enter Address"></textarea>
+            </div>
+            <div class="city que">
+                <label for="city">City</label>
+                <input type="text" placeholder="Enter City...." id="city">
+            </div>
+            <div class="pincode que">
+                <label for="pincode">Pincode</label>
+                <input type="number" placeholder="Enter Pincode...." id="pincode">
+            </div>
+            <div class="startDate que">
+                <label for="sD">Start Date</label>
+                <input type="date" id="sD">
+            </div>
+            <div class="CV que">
+                <label for="cv">Upload Your CV</label>
+                <input type="file" placeholder="Choose File" id="cv">
+            </div>
+
+
+        </div>
+        <div class="btn">
+            <button type="submit">Apply Now</button>
+        </div>
+    </div>
+</body>
+
+</html>

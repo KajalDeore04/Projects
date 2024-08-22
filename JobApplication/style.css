@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+}
+
+body {
+    background-color: gray;
+    display: flex;
+   
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    max-width: 620px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 5px;
+    margin: 50px auto;
+}
+
+.questions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.que {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+input,
+select {
+    box-sizing: border-box;
+    padding: 5px;
+    width: 300px;
+    border: 1px solid rgb(211, 207, 207);
+    border-radius: 5px;
+}
+
+.address textarea{
+    padding: 10px;
+    resize: none;
+}
+
+.btn button{
+    background-color: rgb(222, 80, 33);
+    padding: 5px 15px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+    font-size: 20px;
+    
+}
+
+@media (max-width: 700px) {
+    .container {
+        margin: 20px;
+        padding: 10px;
+        max-width: 100%;
+    }
+    input, select {
+        width: 100%;
+    }
+    textarea{
+        width: 80%;
+    }
+}
