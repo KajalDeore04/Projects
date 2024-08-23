@@ -7,13 +7,14 @@
     box-sizing: border-box;
 }
 
-html,body {
+html,
+body {
     background-color: #161513;
     display: flex;
     flex-direction: column;
     gap: 80px;
     min-height: 100vh;
-    
+
 }
 
 .page1 {
@@ -27,7 +28,7 @@ html,body {
 .nav {
 
     width: 100%;
-    
+
 }
 
 nav {
@@ -35,7 +36,7 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 300px;
-    position:fixed;
+    position: fixed;
     background-color: #222222;
     margin-left: 0;
     width: 100%;
@@ -45,15 +46,21 @@ nav {
 ul {
     list-style: none;
     display: flex;
-    gap: 70px;
+    gap: 10px;
 }
 
 li {
     color: white;
     font-size: 15px;
-    
+    padding: 5px 25px;
 }
-a{
+
+li:hover {
+    animation: zoomin ease-in 1s 1 forwards;
+
+}
+
+a {
     text-decoration: none;
 }
 
@@ -73,13 +80,16 @@ a{
     width: 251px;
 }
 
+.intro img:hover {
+    animation: rotate ease-in-out 5s infinite;
+}
+
 .intro .mainText {
     color: white;
     text-align: center;
     font-size: 55px;
     font-weight: bolder;
     line-height: 1.2;
-
 }
 
 .intro .mainText .highlight {
@@ -88,7 +98,6 @@ a{
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
-
 }
 
 .intro .text {
@@ -107,8 +116,6 @@ a{
     box-sizing: border-box;
     border-radius: 50px;
     margin: auto 5px;
-
-
 }
 
 .btn-light {
@@ -239,135 +246,177 @@ a{
     font-weight: 400;
 }
 
-.company{
+.company {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.info{
+.info {
     display: flex;
     flex-direction: column;
     gap: 50px;
 }
 
-.company .description{
+.company .description {
     color: #8491A0;
     font-size: 14.49px;
     font-weight: 400;
 }
 
-.last{
+.last {
     background-color: #191919;
     width: 100%;
 }
 
-.contact{
+.contact {
     display: flex;
     flex-direction: column;
     gap: 30px;
     max-width: 950px;
     margin: auto;
     padding: 80px;
-    
-    
+
+
 }
 
-.contact h1{
+.contact h1 {
     color: white;
     font-size: 23.53;
 }
 
-.contact .description{
+.contact .description {
     color: #C5C5C5;
     font-size: 14.12px;
     font-weight: 300;
     max-width: 680px;
 }
-.contact .email{
+
+.contact .email {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-.contact .email span{
+
+.contact .email span {
     color: #C5C5C5;
     font-size: 14.12px;
 }
 
-.contact .social{
+.contact .social {
     display: flex;
     gap: 20px;
 }
 
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg)
+    }
+}
+
+@keyframes zoomin {
+    from {}
+
+    to {
+        font-size: 17px;
+        background-color: white;
+        color: #161513;
+        border-radius: 15px;
+
+    }
+}
+
 @media only screen and (max-width: 860px) {
-    nav{
+    nav {
         gap: 40px;
     }
-    ul{
+
+    ul {
         gap: 20px;
     }
-    li{
+
+    li {
         font-size: 12px;
     }
+
     .intro img {
         height: 150px;
         width: auto;
     }
+
     .intro .mainText {
         font-size: 30px;
     }
-    .intro .text{
+
+    .intro .text {
         font-size: 15px;
-        margin:0 30px;
+        margin: 0 30px;
     }
-    .btn{
+
+    .btn {
         font-size: 14px;
     }
-    .skills img{
+
+    .skills img {
         margin: 7px;
     }
-    .projects .card{
+
+    .projects .card {
         width: 300px;
     }
-    .experience .headline{
+
+    .experience .headline {
         flex-direction: column;
     }
+
     .experience .lead {
         gap: 2px;
     }
-    .experience .lead span{
+
+    .experience .lead span {
         font-size: 18px;
     }
-    .company .description{
+
+    .company .description {
         text-align: center;
         margin: 0 30px;
     }
 }
 
 @media only screen and (max-width: 380px) {
-    nav{
+    nav {
         gap: 20px;
     }
-    ul{
+
+    ul {
         gap: 10px;
     }
+
     .intro .mainText {
         font-size: 25px;
     }
-    .intro .text{
-        font-size: 12px; 
-    }
-    .btn{
+
+    .intro .text {
         font-size: 12px;
     }
-    
-    .experience .headline .lead{
+
+    .btn {
+        font-size: 12px;
+    }
+
+    .experience .headline .lead {
         gap: 2px;
     }
-    .experience .lead span{
+
+    .experience .lead span {
         font-size: 15px;
     }
-    .company .description{
+
+    .company .description {
         margin: 0 30px;
         font-size: 14px;
     }
