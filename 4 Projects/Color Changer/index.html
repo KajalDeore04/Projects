@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: cursive;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            height: 80%;
+            width: 100%;
+            background-color: #212121;
+        }
+
+        nav {
+            box-sizing: border-box;
+            height: max-content;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background-color: white;
+            padding: 20px;
+        }
+
+        nav a {
+            background-color: rgb(207, 203, 203);
+            border: 2px solid #212121;
+            border-radius: 15px;
+            padding: 20px 40px;
+            font-size: 20px;
+            text-decoration: none;
+            color: #212121;
+        }
+
+        .canvas{
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        h1 {
+            color: white;
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+        }
+
+        .button {
+
+            background-color: blueviolet;
+            padding: 70px 70px;
+            width: max-content;
+            border-radius: 20px;
+            border: 2px solid #212121;
+        }
+
+        .spans {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+
+        }
+
+        #salmon {
+            background-color: salmon;
+        }
+
+        #purple {
+            background-color: purple;
+        }
+
+        #hotpink {
+            background-color: hotpink;
+        }
+
+        #beige {
+            background-color: beige;
+        }
+
+        h2 {
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/" aria-current="page">Home</a>
+        <a href="https://www.youtube.com">Youtube Channel</a>
+    </nav>
+    <div class="canvas">
+        <h1>Colour Scheme Switcher</h1>
+        <div class="spans">
+            <span class="button" id="salmon"></span>
+            <span class="button" id="purple"></span>
+            <span class="button" id="hotpink"></span>
+            <span class="button" id="beige"></span>
+        </div>
+        <h2>
+            Try clicking on one of the colours above
+            <span>to change the background colour of this page!</span>
+        </h2>
+    </div>
+    <script>
+        const buttons = document.querySelectorAll('.button');
+        const body = document.querySelector('body') 
+         buttons.forEach(function(button){
+            button.addEventListener('click',function(){
+                body.style.backgroundColor = button.id;
+                body.style.opacity = 0.7;
+            })
+         })      
+    </script>
+</body>
+
+</html>
