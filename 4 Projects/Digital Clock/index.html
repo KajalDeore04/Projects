@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        * {
+            font-family: cursive;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 80%;
+            width: 100%;
+            background-color: #212121;
+        }
+
+        nav {
+            box-sizing: border-box;
+            height: max-content;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background-color: white;
+            padding: 20px;
+        }
+
+        nav a {
+            background-color: rgb(207, 203, 203);
+            border: 2px solid #212121;
+            border-radius: 15px;
+            padding: 20px 40px;
+            font-size: 20px;
+            text-decoration: none;
+            color: #212121;
+        }
+
+        .center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 50px;
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        #banner {
+            color: white;
+        }
+
+        #clock {
+            font-size: 50px;
+            background-color: salmon;
+            padding: 10px 20px;
+            margin-top: 50px;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/" aria-current="page">Home</a>
+        <a href="https://www.youtube.com">Youtube Channel</a>
+    </nav>
+    <div class="center">
+        <div id="banner"><span>Your Local Time</span></div>
+        <div id="clock"></div>
+    </div>
+    <script>
+        const clock = document.getElementById('clock');
+
+        setInterval(function(){
+            let date = new Date();
+            //console.log(date.toLocaleTimeString());
+            clock.innerHTML = date.toLocaleTimeString();
+        },1000)
+        
+    </script>
+</body>
+
+</html>
