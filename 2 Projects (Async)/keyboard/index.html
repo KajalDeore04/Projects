@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: cursive;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 80%;
+            width: 100%;
+            background-color: #212121;
+            color: white;
+        }
+
+        nav {
+            box-sizing: border-box;
+            height: max-content;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background-color: white;
+            padding: 20px;
+        }
+
+        nav a {
+            background-color: rgb(207, 203, 203);
+            border: 2px solid #212121;
+            border-radius: 15px;
+            padding: 20px 40px;
+            font-size: 20px;
+            text-decoration: none;
+            color: #212121;
+        }
+
+        table{
+            display: flex;
+            justify-content: center;
+            font-size: 30px;
+            margin-top: 50px;
+        }
+        td{
+            border: 2px solid rgb(153, 151, 151);
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/" aria-current="page">Home</a>
+        <a href="https://www.youtube.com">Youtube Channel</a>
+    </nav>
+    <div class="insert" id="insert"></div>
+    
+</body>
+<script>
+
+const insert = document.getElementById('insert');
+
+window.addEventListener('keydown',(e)=>{
+    insert.innerHTML=`
+    <div class='color'>
+    <table>
+        <tr>
+          <td>Key</td>
+          <td>KeyCode</td>
+          <td>Code</td>
+        </tr>
+        <tr>
+          <td>${e.key === " " ? "Space":e.key}</td>
+          <td>${e.keyCode}</td>
+          <td>${e.code}</td>
+        </tr>
+      </table>
+      </div>
+    `
+})
+
+</script>
+
+</html>
