@@ -97,7 +97,8 @@
             color: rgb(241, 241, 241);
             font-weight: 800;
         }
-        form{
+
+        form {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -152,10 +153,18 @@
                 results.innerHTML = `Please provide a valid weight`;
             } else {
                 const heightInMeters = heightInput / 100;
-                const bmi = (weightInput / (heightInMeters * heightInMeters)).toFixed(2);
+                const bmi = (weightInput / (heightInMeters * heightInMeters)).toFixed(1);
 
                 // show the results
-                results.innerHTML = `<span>${bmi}</span>`;
+                let resultText = '';
+                if (bmi < 18.6) {
+                    resultText = `Under Weight (BMI: ${bmi})`;
+                } else if (bmi >= 18.6 && bmi <= 24.9) {
+                    resultText = `Normal (BMI: ${bmi})`;
+                } else {
+                    resultText = `Over Weight (BMI: ${bmi})`;
+                }
+                results.innerHTML = `<span>${resultText}</span>`;
             }
         });
 
