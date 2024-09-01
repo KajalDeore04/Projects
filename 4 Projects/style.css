@@ -1,0 +1,49 @@
+*{
+    font-family: cursive;
+    background-color: #212121;
+}
+
+nav{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: white;
+    padding: 20px;
+}
+nav a{
+    background-color: rgb(207, 203, 203);
+    border: 2px solid #212121;
+    border-radius: 15px;
+    padding: 20px 40px;
+    font-size: 20px;
+   text-decoration: none;
+   color: #212121;
+}
+
+h1{
+    font-size: 40px;
+    color: white;
+    font-weight: 500;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main a{
+    text-decoration: none;
+    color: #212121;
+    background-color: white;
+    padding: 20px;
+    width: 60%;
+    text-align: center;
+    border: 5px solid #212121;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
