@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+body {
+    background-color: black;
+    color: white;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: auto;
+    height: 100vh;
+    padding: 10px;
+    gap: 10px;
+
+}
+
+.logo img {
+    color: white;
+    height: 35px;
+    margin: 10px 0 15px 10px;
+}
+
+
+
+.main {
+    margin-top: 10px;
+    background-color: #121212;
+    height: max-content;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-radius: 10px;
+}
+
+.nav {
+    display: flex;
+    opacity: 0.7;
+    justify-content: space-between;
+
+}
+
+.library {
+    display: flex;
+    gap: 5px;
+}
+
+.library img {
+    height: 28px;
+    width: auto;
+}
+
+.library h2 {
+    font-size: 18px;
+    margin-top: 3px;
+}
+
+
+
+img {
+    height: 24px;
+    width: auto;
+}
+
+.suggestion button {
+    background-color: #2d2c2c;
+    border: none;
+    border-radius: 15px;
+    padding: 7px 12px;
+    color: white;
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.nextAction {
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.7;
+    align-items: center;
+}
+
+.nextAction img {
+    height: 20px;
+}
+
+.recents {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 200;
+    gap: 5px;
+}
+
+.left-content .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.left-content .cards .card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.left-content .cards .card img {
+    height: 50px;
+    border-radius: 5px;
+}
+
+.left-content .cards .card span {
+    font-size: 13px;
+    color: gray;
+    font-weight: 600;
+}
+
+.right nav {
+    display: flex;
+    margin: 4px 0 15px 10px;
+    justify-content: space-between;
+    padding: 5px 50px 0;
+
+}
+
+.right nav .searching img {
+    height: 50px;
+    padding: 10px;
+    background-color: #212121;
+    border-radius: 50%;
+}
+
+.right .searching {
+    display: flex;
+    gap: 10px;
+}
+
+.right .search {
+    display: flex;
+    background-color: #212121;
+    border-radius: 30px;
+}
+
+.right .search input {
+    border: none;
+    width: 400px;
+    background-color: #212121;
+}
+
+.right .search input::placeholder {
+    color: #b7a8a8;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.right .search .line {
+    height: 30px;
+    background-color: gray;
+    width: 1px;
+    align-self: center;
+}
+
+.right .installation {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.right .installation .install {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.right .installation .install div {
+    font-weight: 900;
+    font-size: 12px;
+}
+
+.profile {
+    align-self: center;
+    padding: 12px 15px;
+    box-shadow: 0px 0px 15px 5px rgb(63, 105, 63);
+    background-color: rgb(13, 204, 13);
+    font-size: 15px;
+    color: black;
+    font-weight: 900;
+    border-radius: 100%;
+    text-align: center;
+
+}
+
+.right .installation img {
+    height: 20px;
+}
+
+.right-main {
+    background-color: #121212;
+    height: max-content;
+    padding: 20px;
+}
+
+.right .content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.right .content .cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+}
+
+.right .card {
+    background-color: hotpink;
+    height: 150px;
+    width: 250px;
+    display: flex;
+    overflow: hidden;
+    border-radius: 15px;
+
+}
+
+.right .card img {
+    position: relative;
+    top: 60px;
+    margin-left: 70px;
+    height: 110px;
+    width: auto;
+    rotate: 25deg;
+    box-shadow: 5px 5px 15px 5px black;
+
+}
+
+.right .card p {
+    max-width: 40px;
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.right .card:nth-child(2) {
+    background-color: salmon;
+}
+
+.right .card:nth-child(3) {
+    background-color: purple;
+}
+
+.right .card:nth-child(4) {
+    background-color: maroon;
+}
+
+.right .card:nth-child(5) {
+    background-color: rebeccapurple;
+}
+
+.right .card:nth-child(6) {
+    background-color: violet;
+}
+
+.right .card:nth-child(7) {
+    background-color: chocolate;
+}
+
+.right .card:nth-child(8) {
+    background-color: rgb(156, 115, 195);
+}
