@@ -1,30 +1,32 @@
-let currentSong = new Audio();
+let currentSong = new Audio();   // object created
 let songs;
 let currFolder;
 
+
+
+
 function secondsToMinutes(second) {
-  if (isNaN(second) || second < 0) {
+  if (isNaN(second) || second < 0) {  //negative seconds or not a number
     return "00:00";
   }
 
-  const minutes = Math.floor(second / 60);
-  const remainingSeconds = Math.floor(second % 60);
+  const minutes = Math.floor(second / 60);    // minutes
+  const remainingSeconds = Math.floor(second % 60);   // seconds
 
-  const formattedMinutes = String(minutes).padStart(2, "0");
+  const formattedMinutes = String(minutes).padStart(2, "0");    // we need minutes in 2 digit format (55) hence 2 digits fill it up with 0
   const formattedSeconds = String(remainingSeconds).padStart(2, "0");
 
   return `${formattedMinutes}:${formattedSeconds}`;
 }
 
 
+//---------------------------------------------------------------------------------------------
+
+
 
 function formatSongName(songName) {
-  // Replace _ with space
-  songName = songName.replace(/_/g, " ");
-
-  // Remove ( and )
+  songName = songName.replace(/_/g, " ");   // removed signs from song name
   songName = songName.replace(/[()]/g, "");
-  // Remove .mp3
   songName = songName.replace(".mp3", "");
   songName = songName.replace(/\//g, "");
 
@@ -33,45 +35,48 @@ function formatSongName(songName) {
 
 
 
+//---------------------------------------------------------------------------------------------
 
 
+
+
+// async function tells that while executing this function dont just stand and wait , u can also execute other functions simultaneously
 async function getSongs(folder) {
 
   currFolder = folder;
 
   let a = await fetch(`http://127.0.0.1:3000/${folder}/`); //provided the directory- usually from server so used fetch, await is for the fetch
-  let response = await a.text(); // extracted text out of it
 
   let div = document.createElement("div"); // created a div
+  let response = await a.text(); // extracted text out of HTML
   div.innerHTML = response; //stored the response in div
-
-  let tags = div.getElementsByTagName("a"); // collected all a tags
-
-  songs = [];
+  let tags = div.getElementsByTagName("a"); // collected all a tags from newly created div
 
 
-  for (let index = 0; index < tags.length; index++) {
+  songs = [];    // clear it everytime
+
+
+  for (let index = 0; index < tags.length; index++) {     // runs to the number of anchor tags found
     const element = tags[index]; // store curr tag in element
-    if (element.href.endsWith(".mp3")) {
-      // if that tag has /songs in it
-      songs.push(element.href.split(`${currFolder}`)[1]); // push it to song arr
+    if (element.href.endsWith(".mp3")) {         // .href allows the full path to the file with its complete name so that we can check if it endswith .mp3
+      songs.push(element.href.split(`${currFolder}`)[1]); // splits the url from the folder name and we access the last part of it from array with the song name, push it to song arr
     }
   }
+
+// songs array is filled
 
 
 
 
 // show all songs in playlist
 
-  let songUL = document //  selects the first li in ul of songlist
-    .querySelector(".songList")
-    .getElementsByTagName("ul")[0];
+  let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0];    //  selects the first ul content
 
-  songUL.innerHTML = ""  ;
-  for (const song of songs) {
-    // for all those li its innerhtml would be that div
+  songUL.innerHTML = ""  ;         // clears it every time
+
+  for (const song of songs) {               // for all those li its innerhtml would be that div
     songUL.innerHTML =
-      songUL.innerHTML +
+      songUL.innerHTML +                    
       `<li data-song="${song}"> 
     <div class="info">
         <img class="invert" src="images/music.svg" alt="">
@@ -88,17 +93,15 @@ async function getSongs(folder) {
   }
 
   //   attach and event listener to each song
-  Array.from(
-    document.querySelector(".songList").getElementsByTagName("li")
-  ).forEach((e) => {
+  Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach((e) => {
     e.addEventListener("click", () => {
-      console.log(e.querySelector(".info div:first-child").textContent.trim());
+      console.log(e.querySelector(".info div:first-child").textContent.trim());              // shows text on playbar whenever clicked on that song
 
       // const songTrack = e
       //   .querySelector(".info div:first-child")
       //   .textContent.trim();
 
-      const songTrack = e.getAttribute("data-song");
+      const songTrack = e.getAttribute("data-song");  // which song to play
       playMusic(songTrack);
     });
   });
@@ -112,6 +115,7 @@ async function getSongs(folder) {
 
 
 
+//---------------------------------------------------------------------------------------------
 
 
 
@@ -134,6 +138,7 @@ const playMusic = (track, pause = false) => {
 
 
 
+//---------------------------------------------------------------------------------------------
 
 
 
@@ -194,6 +199,7 @@ async function displayAlbums(){
 
 
 
+//---------------------------------------------------------------------------------------------
 
 
 
